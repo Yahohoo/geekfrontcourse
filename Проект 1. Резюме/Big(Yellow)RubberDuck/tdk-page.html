@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>TrandeLik</title>
+    <link rel = "stylesheet" href="styles/tdk-style.css">
+    <link rel="SHORTCUT ICON" href="img/icon.png" type="image/x-icon">
+    <script src="Timer.js"></script>
+</head>
+<body>
+    <nav class="NavTDK">
+        <ul>
+            <li><a href="index.html#team" class="a-href">Главная</a></li>
+            <li><a href="#about" class="a-href">Обо мне</a></li>
+            <li><a href="#projects" class="a-href">Мои проекты</a></li>
+            <li><a href="#contacts" class="a-href">Контакты</a></li>
+        </ul>
+    </nav>
+    <a name = "main"></a>
+    <header class="HeaderTDK">
+        <h1>Привет, я Дима!</h1>
+        <h1>Я начинающий web-разработчик</h1>
+    </header>
+    <main>
+        <a name = "about"></a>
+        <section class="aboutTDK">
+            <h1>Обо мне</h1>
+            <article>
+                <p class="textAboutMe">
+                    Я начинающий web-разработчик из Москвы. В данный момент я обучаюсь в Лицее №1580 при МГТУ им. Н.Э. Баумана.
+                    Помимо этого я дополнительно изучаю HTML, CSS, JavaScript, PHP.
+                    P.S. Также работаю с Python и Lazarus.
+                </p>
+                <img alt="Это я:)" src="img/tdk.jpg" class="photo">
+            </article>
+        </section>
+        <a name = "projects"></a>
+        <section class="projectsTDK">
+            <h1>Мои проекты</h1>
+            <article class="newProject">
+                <h2>До запуска проекта "Borshevik" осталось:</h2>
+                <h3 id="timer"></h3>
+                <a href="#aboutBorshevik" class="PopUp">Подробнее о проекте</a>
+                <section id="aboutBorshevik">
+                    <h3>О "Borshevik"</h3>
+                    <img src="img/borshevik.png" class="project_image" alt="Borshevik">
+                    <p class="textAboutBorshevik">Данный портал является решением, которое поможет школьникам изучать историю, а также учить большой объем информации по теме</p>
+                    <a href="#projects" class="PopUp">Скрыть информацию</a>
+                </section>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <a name="contacts"></a>
+        <nav class="nav-contact">
+            <p class="info">Связаться со мной</p>
+            <a href="https://github.com/TrandeLik" class="a-href">Github</a>
+            <a href="https://vk.com/trandelik" class="a-href">vk.com</a>
+            <a href="https://t.me/TrandeLik" class="a-href"> Telegram</a>
+        </nav>
+    </footer>
+</body>
+</html>

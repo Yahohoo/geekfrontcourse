@@ -1,0 +1,147 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	font-family: Trebuchet MS, sans-serief;
+}
+
+a {
+	text-decoration: none;
+}
+
+h1, h2{
+	font-family: Microsoft Sans Serif, sans-serief;
+	text-align: center;
+	margin: 0;
+}
+
+h1 {
+	font-size: 50px;
+  	color: 	#A65912;
+}
+
+h2 {
+	font-size: 40px;
+}
+
+nav {
+    position: fixed;
+  	margin: 0;
+	background-color: none;
+	height: 10vh;
+}
+
+li {
+	list-style-type: none;
+}
+
+nav li {
+	float: left;
+	padding: 10px;
+	display: inline-block;
+	font-size: 20px;
+}
+
+						/*Intro page - first*/
+
+.intro {
+	margin: 0;
+	background-color: #D9F970;
+	height: 100vh;
+}
+
+.indroduction {
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 30vh;
+	width: 400px;
+}
+
+.indroduction p {
+	text-align: center;
+	color: #A65912;
+}
+
+						/*About page - second*/
+.about-me {
+	margin: 0;
+	background-color: #FFFFCC;
+	height: 100vh;
+}
+
+.about-me p {
+	float: left;
+	width: 400px;
+	margin-right: 240px;
+	border: 1px solid springgreen;
+	background: hsla( 141, 100%, 70%, .2 );
+	border-radius: 8px;
+	padding: 15px 10px 15px 10px;
+}
+
+.img {
+	text-align: center;
+}
+
+.my-img {
+	width: 300px;
+	border-radius: 300px;
+	border: 2px solid green;
+}
+.content {
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 15vh;
+	width: 1000px;
+}
+
+.content h2 {
+	margin-bottom: 50px;
+}
+
+						/*portfolio page - third*/
+.my-works {
+	margin: 0;
+	background-color: #FF9238;
+	height: 100vh;	
+}
+
+.my-works .content {
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 10vh;
+}
+
+.my-works h2, .about-me h2 {
+	margin-bottom: 50px;
+	color: #A65512;
+}
+
+.work-img, .project p {
+	width: 350px;
+}
+
+.project {
+	float: left;
+	border: 2px solid #A65512;
+	border-radius: 10px;
+	padding: 15px;
+	margin-right: 100px;
+	background: hsla( 0, 100%, 70%, .2 );
+}
+
+						/*contacts page - fourth*/
+
+.connection {
+	margin: 0;
+	background-color: 	#FF91E7;
+	height: 30vh;
+}
+
+.connection .content {
+	padding-top: 5vh;
+}
+
+.connection h2 {
+	color: #A61285;
+}

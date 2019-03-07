@@ -1,0 +1,122 @@
+ body{
+     font-family: "Consolas";
+    color: #50026E;
+    margin: 0;
+    background: repeating-linear-gradient(45deg,#9d81ba, #9d81ba 5px, white 5px, white 20px) fixed 1500px;
+}
+
+
+ img.photo{
+    float: right;
+    margin-right: 10%;
+    border: 3px solid #50026E;
+    border-radius: 500px;
+ }
+
+ li {
+    display: inline-block;
+    list-style-type: none; 
+}
+
+ section.projectsTDK, section.aboutTDK, header.HeaderTDK{
+    padding-top: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 100vh;
+    text-align: center;
+    vertical-align: middle;
+    background: white;
+}
+
+ nav.nav-contact, nav.NavTDK{
+    padding-top: 0;
+    background: #50026E;
+    width: 100%;
+    text-align: center;
+    height: 80px;
+}
+
+ h1{
+    font-size: 40px;
+}
+
+ p.text{
+    font-size: large;
+}
+
+ p.textAboutMe{
+    float: left;
+    margin-left: 10%;
+    padding-left: 1%;
+    padding-right: 1%;
+    width: 40%;
+    font-size: large;
+    border: 3px solid #50026E;
+    border-radius: 3px;
+}
+
+ nav.NavTDK{
+    height: 50px;
+    position: fixed;
+}
+
+ nav.nav-contact{
+    height: 80px;
+}
+
+ article{
+     padding-left: 10%;
+     text-align:left;
+}
+
+ a.a-href{
+    margin-right: 30px;
+    color: white;
+    font-stretch: extra-expanded;
+    vertical-align: middle;
+    text-decoration: none;
+}
+
+ a.a-href:hover{
+    color: yellow;
+}
+
+ p.info{
+    color: white;
+    border-bottom: 2px inset white;
+    margin: 0;
+}
+ article.newProject{
+     padding: 0;
+     border: #50026E 3px;
+     border-radius: 3px;
+     text-align: center;
+     height: 20vh;
+ }
+
+
+ #aboutBorshevik:not(:target) {
+     display: none;
+ }
+ #aboutBorshevik:target {
+     display: block;
+ }
+
+ img.project_image{
+     height:200px;
+ }
+
+ a.PopUp{
+     text-decoration: none;
+     color: #50026E;
+     font-stretch: extra-expanded;
+ }
+
+ a.PopUp:hover{
+     color: green;
+ }
+
+ p.textAboutBorshevik{
+     width: 40%;
+     margin-left: 30%;
+ }

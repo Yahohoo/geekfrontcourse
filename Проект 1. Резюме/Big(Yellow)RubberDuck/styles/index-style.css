@@ -1,0 +1,143 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  font-family: Trebuchet MS, sans-serief;
+}
+
+a {
+	text-decoration: none;
+}
+
+h1, h2, h3 {
+	font-family: Microsoft Sans Serif, sans-serief;
+	text-align: center;
+}
+
+h1 {
+	font-size: 50px;
+  	color: 	#9966FF;
+  	transition: all 1s;
+  	width: 500px;
+  	margin-left: auto;
+  	margin-right: auto;
+}
+
+h2 {
+	font-size: 40px;
+}
+
+h3 {
+	font-size: 30px;
+	color: #FF6600;
+	margin: 0;
+}
+
+						/*First Page*/
+.header {
+    position: fixed;
+  	margin: 0;
+	background-color: none;
+	height: 10vh;
+}
+
+li {
+	float: left;
+	padding: 10px;
+	display: inline-block;
+	list-style-type: none;
+	font-size: 20px;
+}
+
+.team-name {
+	margin: 0;
+	background-color: lightcyan;
+	height: 100vh;
+}
+
+.head {
+  	margin-left: auto;
+  	margin-right: auto;
+  	padding-top: 15vh;
+  	text-align: center;
+}
+
+.logo-img {
+  	width: 250px;
+  	height: 250px;
+	border-radius: 250px;
+}
+
+h1:hover {
+    text-align: center;
+    color: #990066;
+}
+						/*Second Page*/
+.why-we {
+	margin: 0;
+	background-color: #abffc5;
+	height: 100vh;
+}
+
+.why-we h2 {
+	color: #00CC66;
+}
+
+.answer {
+	margin-right: auto;
+	margin-left: auto;
+	width: 700px;
+	padding-top: 10vh;
+}
+
+						/*Third Page*/
+.our-team {
+	margin: 0;
+	background-color: #fcffa3;
+	height: 100vh;
+}
+
+.our-team h2 {
+	color: #FF9900;
+}
+
+.team {
+	margin-left: auto;
+  	margin-right: auto;
+  	text-align: center;
+	padding-top: 10vh;
+	width: 960px;
+}
+
+.person {
+	box-sizing: border-box;
+	text-align: center;
+	border: 2px solid green;
+	width: 300px;
+	float: left;
+	margin-left: 20px;
+}
+.person img {
+	margin: 5px;
+	width: 90px;
+	border-radius: 90px;*/
+}
+
+
+						/*Fourth Page*/
+.portfolio {
+	margin: 0;
+	background-color: #fffce5;
+	height: 100vh;
+}
+
+.portfolio h2 {
+	color: #FFCC66;
+}
+
+.team-portfolio {
+	margin-right: auto;
+	margin-left: auto;
+	width: 700px;
+	padding-top: 10vh;
+}
