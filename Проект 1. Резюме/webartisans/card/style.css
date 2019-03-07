@@ -1,0 +1,114 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    /*overflow: hidden;*/
+    overflow: scroll;
+    /*background-image: url(./figure.png);*/
+    background: #f1f2f3;
+    -webkit-background-size: cover;
+    background-size: cover;
+    color: #222;
+}
+.wrap
+{
+    padding: 30px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    -webkit-perspective: 1200px;
+    -moz-perspective: 1200px;
+    -ms-perspective: 1200px;
+    perspective: 1200px;
+    z-index: 400;
+}
+#block
+{
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+h1
+{
+    font-size: 2em;
+    font-family: Montserrat, sans-serif;
+    text-decoration: underline;
+    text-decoration-color: teal;
+    color:#222;
+}
+mark
+{
+    border-radius: 5px;
+    padding: 0 5px;
+    background: #F0D369;
+}
+article
+{
+    font-size: 1.5rem;
+    font-family: Roboto;
+    color:#333;
+    padding: 30px;
+}
+.c
+{
+    height: 100%;
+    border-radius: 5px;
+    /*box-shadow: 5px 0 15px rgba(0,0,0,0.2);*/
+}
+.flex article
+{
+    overflow-y: auto;
+}
+.flex
+{
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 5px 100px rgba(0,0,0,0.2);
+    
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+}
+@media screen and (max-aspect-ratio: 6/5) and (max-width: 1000px) {
+    .flex
+    {
+        -webkit-flex-direction: column;
+        -moz-flex-direction: column;
+        -ms-flex-direction: column;
+        -o-flex-direction: column;
+        flex-direction: column;
+        border-radius: 0;
+    }
+    .c 
+    {
+        height: auto;
+        width: 100%;
+    }
+    .wrap
+    {
+        height: auto;
+        -webkit-flex-direction: column;
+        -moz-flex-direction: column;
+        -ms-flex-direction: column;
+        -o-flex-direction: column;
+        flex-direction: column;
+        /*padding: 20px;*/
+        padding: 0;
+    }
+}
