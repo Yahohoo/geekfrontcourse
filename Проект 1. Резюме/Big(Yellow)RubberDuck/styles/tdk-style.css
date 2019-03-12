@@ -28,7 +28,8 @@
     background: white;
 }
 
- nav.nav-contact, nav.NavTDK{
+
+ nav.nav-contact{
     padding-top: 0;
     background: #50026E;
     width: 100%;
@@ -112,6 +113,10 @@
      font-stretch: extra-expanded;
  }
 
+ a:hover{
+     color: yellow;
+ }
+
  a.PopUp:hover{
      color: green;
  }
@@ -119,4 +124,35 @@
  p.textAboutBorshevik{
      width: 40%;
      margin-left: 30%;
+ }
+
+
+ .navbar-inverse {
+     background-color: #50026E;
+     border-color: #080808;
+ }
+
+ .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+     background-color: #660099;
+ }
+
+ .navbar-inverse .navbar-brand {
+     color: white;
+ }
+
+ .navbar-inverse .navbar-nav>li>a {
+     color: white;
+ }
+
+ .navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover {
+     color: yellow;
+     background-color: transparent;
+ }
+
+ a.navbar-bran :hover{
+     color: yellow;
+ }
+
+ nav{
+     text-align: center;
  }
