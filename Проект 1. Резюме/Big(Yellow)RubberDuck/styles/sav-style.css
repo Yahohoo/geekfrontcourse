@@ -1,7 +1,9 @@
+header, main, footer {
+    padding:0 !important;
+    margin: 0 !important;
+}
 nav {
     background-color: #16f0e1;
-    padding:0px;
-    margin: 0;
     font-size:40px;
     position:fixed;
 }
