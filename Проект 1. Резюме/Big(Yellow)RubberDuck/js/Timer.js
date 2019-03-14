@@ -1,6 +1,10 @@
+var popUpWindow = document.getElementById("PopUpWindow");
+var expand = document.getElementById("expand");
+var rollUp = document.getElementById("rollUp");
+
 window.onload = function () {
     function startTimer() {
-        let end = new Date(2019, 1, 28);
+        let end = new Date(2019, 2, 31);
         let now = new Date();
         let days = Math.floor((end)/(1000 * 60 *60 *24)) - Math.floor((now)/(1000 * 60 *60 *24));
         let weeks = Math.floor(days/7);
@@ -38,3 +42,11 @@ window.onload = function () {
     startTimer()
 };
 
+expand.onclick = function () {
+  popUpWindow.style.height = '700px';
+};
+
+
+rollUp.onclick = function () {
+  popUpWindow.style.height = '100vh';
+};

@@ -1,14 +1,15 @@
  body{
-     font-family: "Consolas";
+    font-family: "Consolas";
     color: #50026E;
     margin: 0;
     background: repeating-linear-gradient(45deg,#9d81ba, #9d81ba 5px, white 5px, white 20px) fixed 1500px;
 }
 
+ .myOwnOffset{
+     margin-left: 8.3333333%;
+ }
 
  img.photo{
-    float: right;
-    margin-right: 10%;
     border: 3px solid #50026E;
     border-radius: 500px;
  }
@@ -23,6 +24,7 @@
     text-align: center;
     vertical-align: middle;
     background: white;
+    min-height: 100vh;
 }
 
 
@@ -46,8 +48,7 @@
     float: left;
     padding-left: 1%;
     padding-right: 1%;
-    width: 40%;
-    font-size: large;
+    font-size: 20px;
     border: 3px solid #50026E;
     border-radius: 3px;
 }
@@ -100,7 +101,7 @@
  }
 
  a.PopUp{
-     text-decoration: none;
+     text-decoration: underline;
      color: #50026E;
      font-stretch: extra-expanded;
  }
