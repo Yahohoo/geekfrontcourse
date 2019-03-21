@@ -1,0 +1,159 @@
+body{
+    background: linear-gradient(180deg, #525252, #e26b6b);
+}
+
+.header_block{
+    height: 300px;
+    width: 90%; 
+    background-color: #a6b2fd;
+    margin: auto;
+    position: relative;
+    z-index: 80;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.about_me_block{
+    height: 300px;
+    width: 70%;
+    background-color: #242424;
+    position: absolute;
+    z-index: 90;
+}
+
+
+.text_about_me{
+    color: #ffffff;
+    font-size: 140%;
+    font-family: 'Roboto';
+    text-align: right;
+}
+
+.some_text_block{
+    margin-top: 10%;
+}
+
+.ava_block{
+    height: 300px;
+    width:  30%;
+    position: absolute;
+    left: 70%;
+    z-index: 90;
+    background-color: #242424;
+}
+
+.ava{
+    border-radius: 200px;
+    width: 250px;
+    height: 250 px;
+    margin-top: 6%;
+    margin-left: 15%;
+}
+
+.main_block{
+    height: 1250px;
+    width: 60%;
+    background-color: #f8ffd3;
+    margin: auto;
+    position: relative;
+    z-index: 80;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.portfolio_block{
+    height: 900px;
+    width: 100%;
+    position: absolute;
+    background: #ffffff;
+}
+
+.headline_portfolio{
+    font-style: normal;
+    color: #000000;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.text_portfolio{
+    font-style: italic;
+    font-size: 120%;
+    color: #000000;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.contact_block{
+    height: 350px;
+    width: 100%;
+    position: absolute;
+    top:900px;
+    background: #242424;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.connection_portfolio{
+    font-style: normal;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.some_inf_block{
+    height: 200px;
+    width: 25%;
+    border: 6px solid #000000;
+    background: #ffffff;
+    position: absolute;
+    left: 70%;
+    top: 25%;
+}
+
+.question{
+    font-style: normal;
+    color: #000000;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.some_inf_block:hover{
+    background-color: #ff8989
+}
+
+.some_text{
+    color: #ffffff;
+    font-size: 140%;
+    font-style: italic;
+    color: #ffffff;
+    margin-left: 5%;
+    text-align: center;
+}
+
+.form_block{
+    height: 100px;
+    width: 30%;
+    position: absolute;
+    left:5%
+}
+
+.input{
+    border: none;
+    border-bottom: 2px solid #ff3030d3;
+    font-size: 30px;
+	font-weight: 100;
+    margin-bottom: 25px;
+    text-align: center;
+    font-family: 'Roboto';
+    background-color: #ff9b9b;
+    margin-left: 5%;
+    margin-top: 1%;
+}
+
+.button{
+    background-color: #ffffff;
+    width: 50%;
+    height: 30px;
+    font-size: 20px;
+    font-family: 'Roboto';
+    margin-left: 30%;
+    color: #000000;
+    border-radius: 5px;
+}
