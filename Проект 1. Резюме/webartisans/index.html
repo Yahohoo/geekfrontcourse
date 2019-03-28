@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+    
+    <title>Портфолио</title>
+</head>
+<body>
+    <nav id="top-nav">
+        <div class="mobile-wrapper">
+
+            <div class="nav-brand mont">
+                Logo
+            </div>
+
+            <div class="menu-icon">
+            </div>
+        </div>
+        <ul class="nav-list">
+            <li>
+                <a href="#cards">Команда</a>
+            </li>
+            <li>
+                <a href="#about_us">О нас</a>
+            </li>
+            <li>
+                <a href="#">Страница3</a>
+            </li>
+        </ul>
+    </nav>
+    <header>
+        <h1 id="heading">Мы - команда 123</h1>
+    </header>
+    <section id="cards">
+        <a href="./card/index.html">
+            <div class="card">
+                <span class="card-title">Святослав Чуев</span>
+                <p>Full-Stack Junior разработчик, работаю с <mark>Laravel</mark> и <mark>Express</mark>. Изучаю фреймворк Vue, хобби - создание веб приложений, Electron приложений, разработка игр, веб дизайн.</p>
+            </div>
+        </a>
+        <a href="./card/index.html">
+            <div class="card">
+                <span class="card-title">Ростислав Рощенко</span>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, ipsum facere odit repellat error ad fuga necessitatibus? Qui sapiente illo quis temporibus sit placeat. Nemo voluptas nobis at asperiores id!</p>
+            </div>
+        </a>
+        <a href="./card/index.html">
+            <div class="card">
+                <span class="card-title">Стёпа Катчан</span>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti blanditiis autem aliquid eveniet molestiae necessitatibus reprehenderit rem maiores reiciendis quam quia ex aliquam sunt suscipit, veniam quidem optio assumenda laborum!</p>
+            </div>
+        </a>
+    </section>
+
+
+    <article id="about_us">
+        <h1>О нас</h1>
+        <p>Мы junior web-</p>
+    </article>
+    <footer>
+        <section>
+            <h3>Связатся с нами</h3>
+            <ul>
+                <li>88005553535</li>
+                <li>foo@bar.com</li>
+                <li>@team123</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h3>Авторское право</h3>
+            <ul>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, aperiam. Pariatur aliquid at voluptatibus ad rerum nostrum excepturi, odit sunt facilis voluptatum quod consequuntur molestiae, iusto vitae animi! Consectetur, iste?</li>
+            </ul>
+        </section>
+    </footer>
+
+    <script>
+        var nav_open = false;
+
+
+        window.onresize = function () {
+            if (window.innerWidth > 700)
+            {
+                document.querySelector(".nav-list").style.display = "flex";
+                nav_open = true;
+            } 
+            else
+            {
+                document.querySelector(".nav-list").style.display = "none";
+                nav_open = false;
+            }
+        }
+        document.querySelector(".menu-icon").addEventListener("click", function () 
+        {
+            nav_open = !nav_open;
+
+            console.log(nav_open)
+            if (nav_open)
+            {
+                document.querySelector(".nav-list").style.display = "flex";
+            }  
+            else
+            {
+
+                document.querySelector(".nav-list").style.display = "none";
+            }
+        })
+
+        var header = document.getElementsByTagName("header")[0];
+        var top_nav = document.getElementById("top-nav");
+        var heading = document.getElementById("heading");
+        var oldscroll = window.pageYOffset;
+        var intense = 0;
+        window.onscroll = function()
+        {
+            heading.style.transform = `translateY(${window.pageYOffset/4}px)`;
+            header.style.backgroundPositionY = window.pageYOffset/3+"px";
+
+            if (oldscroll < window.pageYOffset)
+            {
+                intense += window.pageYOffset-oldscroll;
+                if (intense > 200)
+                    top_nav.style.top = "-100px";
+            }
+            else
+            {
+                intense = 0;
+                top_nav.style.top = "0px";
+
+            }
+            if (window.pageYOffset < 20)
+            {
+                top_nav.style.boxShadow = "0 0 50px rgba(0,0,0,0.0)";
+                top_nav.style.background = "rgba(255, 255, 255, 0.3)";
+            }
+            else
+            {
+
+                top_nav.style.background = "rgba(255, 255, 255, 1)";
+                top_nav.style.boxShadow = "0 0 50px rgba(0,0,0,0.2)";
+            }
+            oldscroll = window.pageYOffset;
+        }
+
+        window.onload = window.onscroll;
+    </script>
+</body>
+</html>

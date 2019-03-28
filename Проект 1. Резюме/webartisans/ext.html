@@ -1,0 +1,55 @@
+   <script>
+        var nav_open = false;
+
+
+
+        window.onresize = function () {
+            if (window.innerWidth > 700)
+            {
+                document.querySelector(".nav-list").style.display = "flex";
+                nav_open = true;
+            } 
+            else
+            {
+                document.querySelector(".nav-list").style.display = "none";
+                nav_open = false;
+            }
+        }
+        document.querySelector(".menu-icon").addEventListener("click", function () 
+        {
+            nav_open = !nav_open;
+
+            console.log(nav_open)
+            if (nav_open)
+            {
+                document.querySelector(".nav-list").style.display = "flex";
+            }  
+            else
+            {
+
+                document.querySelector(".nav-list").style.display = "none";
+            }
+        })
+
+        var header = document.getElementsByTagName("header")[0];
+        var top_nav = document.getElementById("top-nav");
+        var heading = document.getElementById("heading");
+        window.onscroll = function()
+        {
+            heading.style.transform = `translateY(${window.pageYOffset/4}px)`;
+            header.style.backgroundPositionY = window.pageYOffset/3+"px";
+            if (window.pageYOffset < 20)
+            {
+                top_nav.style.boxShadow = "0 0 50px rgba(0,0,0,0.0)";
+                top_nav.style.background = "rgba(255, 255, 255, 0.3)";
+            }
+            else
+            {
+                
+                top_nav.style.background = "rgba(255, 255, 255, 1)";
+                top_nav.style.boxShadow = "0 0 50px rgba(0,0,0,0.2)";
+            }
+        }
+
+        window.onload = window.onscroll;
+    </script>

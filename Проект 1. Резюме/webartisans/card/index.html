@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="flex" id="block">
+      <img src="./sample.png" alt="Picture" class="c">
+      <article>
+        <h1>Developer name</h1>
+        <p>
+          
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus libero aut deserunt fuga quidem repellendus, laborum architecto qui illum inventore facilis, quaerat placeat saepe exercitationem fugit facere totam in tempore. ipsum dolor sit amet, consectetur adipisicing elit. Labore asperiores ullam, sequi accusamus aliquid corporis sapiente illum necessitatibus tempore saepe quasi. Dolores explicabo vel sequi, error perferendis nobis, molestias <mark>officiis</mark>. ipsum dolor sit amet, consectetur adipisicing elit. Architecto obcaecati fuga temporibus maxime animi, rerum nostrum ducimus velit aperiam esse, quos delectus praesentium at, modi eveniet iure! Doloremque corporis, aperiam. ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt ipsam voluptas quas eos rerum laudantium aperiam odio quam magni cum veritatis ratione, qui, blanditiis ad sunt architecto ipsa saepe nobis.
+
+        </p>
+      </article>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    function mv(e) {
+      if (window.innerWidth > 900)
+      {
+        var cx = $("#block").position().left + $("#block").width()/2; 
+        var cy = $("#block").position().top + $("#block").height()/2;
+        var mx = e.clientX - cx;
+        var my = e.clientY - cy;
+        var sw = screen.width/6;
+        var sh = screen.height/6;
+
+        $("#block").css("transform", `rotateX(${-my/sh}deg) rotateY(${mx/sw}deg)`);
+      }
+      else
+      {
+
+        $("#block").css("transform", `none`); 
+      }
+    }
+    window.onload = function(e)
+    {
+      mv(e);
+      console.log($("#block").position().left)
+      $(document).on('mousemove', function(e){
+        mv(e);
+      });
+    }
+  </script>
+</body>
+</html>
