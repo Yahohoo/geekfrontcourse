@@ -6,3 +6,16 @@
 .input{
     margin-top: 10px;
 }
+
+[name="main"]{
+    display:none;
+}
+
+
+[name="question"]{
+    background-color: #f2f2f2;
+}
+
+[name="check"]{
+    margin-top:10px;
+}
