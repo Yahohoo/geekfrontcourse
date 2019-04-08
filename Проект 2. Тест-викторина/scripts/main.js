@@ -1,3 +1,29 @@
+
+let types = [];
+let n = 0;
+let final = [];
+document.getElementsByName("submit")[0].onclick = function(){
+    types, n = read();//считать данные о типах вопросов
+    document.getElementsByName("main")[0].style.display = 'none';//скрыть главную страницу
+    document.getElementsByName("task")[0].style.display = 'block';
+    questions = [{type:3},{type:3},{type:3}];//form(types, n);//сформировать список вопросов
+    for (i=1;i<=n;i++){//повторять столько сколько вопросов
+        task = randomTask();//выбрать вопрос из списка
+        console.log(task);
+        askQuestion();//в зависимости от типа вызвать соответствующую функцию которая оформит интерфейс и считает ответ
+        //final = correct(answer, task);//записать корректность/некорректность ответа
+    }
+//results(final);//сформировать страницу результатов
+}
+
+
+
+//questions - массив с вопросами
+//task - текущее задание
+//answer - ответ данный пользователем
+//final - список из вопросов и ответов пользователя
+
+
 function read(){
     let types = [];
     let n = 0;
@@ -12,54 +38,80 @@ function read(){
 }
 
 function randomTask(){
-    let a = Math.floor(Math.random() * length(questions));
-    final.push(questions.splice(a,1));
-    return final[length(final)-1];
+    let a = Math.floor(Math.random() * questions.length);
+    final.push(questions.splice(a,1)[0]);
+    return final[final.length-1];
 }
 
+function generateColor(){
+    let s = '0123456789ABCDEF';
+    let result = "#";
+    for (i=1;i<=6;i++){
+        result+=s[Math.floor(Math.random() * s.length)];
+    }
+    return result;
+}
 
-function askQuestion(task){
+function rgbToHash(rgb){
+    rgb = rgb.replace('rgb(','');
+    rgb = rgb.replace(')','');
+    let rgbArray = rgb.split(", ");
+    let result = "#"+parseInt(rgbArray[0],10).toString(16)+parseInt(rgbArray[1]).toString(16)+parseInt(rgbArray[2]).toString(16);
+    return result.toUpperCase();
+}
+function functionForType3(){
+    let color = generateColor();
+    task.question = "Что это за цвет?\n" + color; 
+    task.correctAnswer = color;
+    document.getElementsByName("question")[0].innerText = task.question;
+    document.getElementsByName("answers")[0].innerHTML = "<ul><li name='color'></li><li name='color'></li><li name='color'></li><li name='color'></li></ul>";
+    let answers = [color, generateColor(), generateColor(), generateColor()];
+    task.answers = answers.slice(0);
+    let elements = document.getElementsByName("color");
+    for (i=0;i<4;i++){
+        let a = Math.floor(Math.random() * answers.length);
+        elements[i].style.backgroundColor = answers.splice(a,1);
+        elements[i].style.width = '100px';
+        elements[i].style.height = '100px';
+    }
+        document.getElementsByName("color")[0].onclick = function (){
+            task.userAnswer = rgbToHash(this.style.backgroundColor);
+        }
+        document.getElementsByName("color")[1].onclick = function (){
+            task.userAnswer = rgbToHash(this.style.backgroundColor);
+        }
+        document.getElementsByName("color")[2].onclick = function (){
+            task.userAnswer = rgbToHash(this.style.backgroundColor);
+        }
+        document.getElementsByName("color")[3].onclick = function (){
+            task.userAnswer = rgbToHash(this.style.backgroundColor);
+        }
+        document.getElementsByName("check")[0].onclick = function (){
+        }
+}
+
+function askQuestion(){
     switch(task.type){
-        case 1:
-            var f = functionForType1; 
-            
-        case 2:
-            var f = functionForType2;
+//        case 1:
+//            var f = functionForType1; 
+//            
+//        case 2:
+//            var f = functionForType2;
         
         case 3:
             var f = functionForType3;
 
-        case 4:
-            var f = functionForType4;
+//        case 4:
+//            var f = functionForType4;
 
-        case 5:
-            var f = functionForType5;
+//        case 5:
+//            var f = functionForType5;
 
-        case 6:
-            var f = functionForType6;
+//        case 6:
+//            var f = functionForType6;
 
-        case 7:
-            var f = functionForType7;
+//        case 7:
+//            var f = functionForType7;
     } 
     return f();
 }
-
-let types = [];
-let n = 0;
-document.getElementsByName("submit")[0].onclick = function(){
-    types, n = read();//считать данные о типах вопросов
-    document.getElementsByName("main")[0].style.display = 'none';//скрыть главную страницу
-    document.getElementsByName("task")[0].style.display = 'block';
-}
-let questions = form(types, n);//сформировать список вопросов
-for (i=1;i<=n;i++){//повторять столько сколько вопросов
-    let task = randomTask();//выбрать вопрос из списка
-    answer = askQuestion();//в зависимости от типа вызвать соответствующую функцию которая оформит интерфейс и считает ответ
-    final = correct(answer, task);//записать корректность/некорректность ответа
-}
-results(final);//сформировать страницу результатов
-
-//questions - массив с вопросами
-//task - текущее задание
-//answer - ответ данный пользователем
-//final - список из вопросов и ответов пользователя
