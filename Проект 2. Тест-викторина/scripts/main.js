@@ -6,27 +6,55 @@ document.getElementsByName("submit")[0].onclick = function(){
     types, n = read();//считать данные о типах вопросов
     document.getElementsByName("main")[0].style.display = 'none';//скрыть главную страницу
     document.getElementsByName("task")[0].style.display = 'block';
-    questions = [{type:3},{type:3},{type:3}];//form(types, n);//сформировать список вопросов
-    for (i=1;i<=n;i++){//повторять столько сколько вопросов
+    questions = form(types, n);//сформировать список вопросов
+    if (n!=0){//повторять столько сколько вопросов
         task = randomTask();//выбрать вопрос из списка
-        console.log(task);
         askQuestion();//в зависимости от типа вызвать соответствующую функцию которая оформит интерфейс и считает ответ
         //final = correct(answer, task);//записать корректность/некорректность ответа
+        n--;
+    }else{
+        results(final);//сформировать страницу результатов
     }
 //results(final);//сформировать страницу результатов
 }
 
-
+document.getElementsByName("submit")[1].onclick = function(){
+    if (n!=0){
+        task = randomTask();//выбрать вопрос из списка
+        askQuestion();//в зависимости от типа вызвать соответствующую функцию которая оформит интерфейс и считает ответ
+        //final = correct(answer, task);//записать корректность/некорректность ответа
+        n--;
+    }else{
+        results(final);//сформировать страницу результатов
+        console.log(final);
+    }
+//
+}
 
 //questions - массив с вопросами
 //task - текущее задание
 //answer - ответ данный пользователем
 //final - список из вопросов и ответов пользователя
 
+function form(types,n){
+    let q = [[],[],[{type:3},{type:3},{type:3}],[],[],[],[]];
+    let res = [];
+    for (i=1;i<=n;i++){
+        let a = Math.floor(Math.random() * types.length);
+        let b = Math.floor(Math.random() * q[types[a]-1].length);
+        res.push(q[types[a]-1][b]);
+    }
+    return res;
+}
+
+function results(final){
+    document.getElementsByName("task")[0].style.display = 'none';
+    document.getElementsByName("results")[0].style.display = 'block';
+}
 
 function read(){
-    let types = [];
-    let n = 0;
+    types=[];
+    n = 0;
     for (i=1;i<=7;i++){
         let elem = document.getElementsByName(String(i))[0];
         if (elem.checked){
@@ -39,7 +67,8 @@ function read(){
 
 function randomTask(){
     let a = Math.floor(Math.random() * questions.length);
-    final.push(questions.splice(a,1)[0]);
+    let b = questions.splice(a,1)[0];
+    final.push(b);
     return final[final.length-1];
 }
 
@@ -85,8 +114,6 @@ function functionForType3(){
         }
         document.getElementsByName("color")[3].onclick = function (){
             task.userAnswer = rgbToHash(this.style.backgroundColor);
-        }
-        document.getElementsByName("check")[0].onclick = function (){
         }
 }
 
