@@ -15,10 +15,23 @@
     display:none;
 }
 
+li{
+    list-style-type: none;
+}
 
+[name="color"]{
+    margin:10px;
+    width: 100px; 
+    height: 100px; 
+    display: inline-block;
+}
 [name="question"]{
     background-color: #f2f2f2;
     text-align: center;
+}
+
+h1{
+    font-size: 30px;
 }
 
 [name="check"]{
