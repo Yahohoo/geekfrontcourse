@@ -18,18 +18,6 @@ document.getElementsByName("submit")[0].onclick = function () {
 //results(final);//сформировать страницу результатов
 };
 
-function userAnswerToSecondType() {
-    task.userAnswer = [];
-    let answers = document.getElementsByClassName('answerForSecond');
-    console.log(answers[0]);
-    for (let i = 0; i < answers.length; i++){
-        let isChecked = answers[i].querySelectorAll("input")[0];
-        if(isChecked.checked){
-            task.userAnswer.push(answers[i].querySelectorAll("span")[0].innerText);
-        }
-    }
-}
-
 document.getElementsByName("check")[0].onclick = function () {
     if (n !== 0) {
         if (task.type === 2){userAnswerToSecondType()}
@@ -76,48 +64,6 @@ function form(types, n) {
     return res;
 }
 
-function printingForSecond(task, results) {
-    let html = "";
-    html += '<article class="col-10 offset-1 align-items-center"><section name="question" class="card align-items-center"><h1>' + task.question + '</h1></section>';
-    html += '<section name="answers" class="card"><ul>';
-    task.answers.forEach( function (quest) {
-        if (isCorrect(quest, task.userAnswer)) {
-            if (isCorrect(quest, task.correctAnswer)){
-                html += "<li class='answerForSecond'>" + "<input type='checkbox' checked disabled>" + "<span style='color: green'>" + quest + "</span>" + "</li>";
-            } else {
-                html += "<li class='answerForSecond'>" + "<input type='checkbox' checked disabled>" + "<span style='color: red'>" + quest + "</span>" + "</li>";
-            }
-        } else {
-            if (isCorrect(quest, task.correctAnswer)){
-                html += "<li class='answerForSecond'>" + "<input type='checkbox' disabled>" + "<span style='color: green'>" + quest + "</span>" + "</li>";
-            } else {
-                html += "<li class='answerForSecond'>" + "<input type='checkbox' disabled>" + "<span>" + quest + "</span>" + "</li>";
-            }
-        }
-    });
-    html += '</ul></section></article>';
-    results.innerHTML+=html;
-}
-
-function printingForThird(task ,results) {
-    let html ="";
-    html += '<article class="col-10 offset-1 align-items-center"><section name="question" class="card align-items-center"><h1>' + task.question + '</h1></section>';
-    html += '<section name="answers" class="card" style="text-align:center;"><ul>';
-    task.answers.forEach( function (quest) {
-        if (isCorrect(quest, task.correctAnswer)) {
-            html += "<li name='color' style='background-color: " + quest + "; box-shadow: 0 0 0 3px #fff, 0 0 0 6px #82ff9b;'>"
-        } else {
-            if (isCorrect(quest, task.userAnswer)){
-                html += "<li name='color' style='margin: 10px; width: 100px; height: 100px; background-color: " + quest + "; box-shadow: 0 0 0 3px #fff, 0 0 0 6px #ff8282;'>"
-            } else {
-                html += "<li name='color' style='margin: 10px; width: 100px; height: 100px; background-color: " + quest + ";'>"
-            }
-        }
-    });
-    html += '</ul></section></article>';
-    results.innerHTML+=html;
-}
-
 function results(final) {
     console.log(final);
     let windowForAllResults = document.getElementsByName("results")[0]
@@ -153,83 +99,6 @@ function randomTask() {
     let a = Math.floor(Math.random() * questions.length);
     let b = questions.splice(a, 1)[0];
     return b;
-}
-
-function generateColor() {
-    let s = '0123456789ABCDEF';
-    let result = "#";
-    for (let i = 1; i <= 6; i++) {
-        result += s[Math.floor(Math.random() * s.length)];
-    }
-    return result;
-}
-
-function rgbToHash(rgb) {
-    rgb = rgb.replace('rgb(', '');
-    rgb = rgb.replace(')', '');
-    let rgbArray = rgb.split(", ");
-    let result = "#" + parseInt(rgbArray[0], 10).toString(16) + parseInt(rgbArray[1]).toString(16) + parseInt(rgbArray[2]).toString(16);
-    return result.toUpperCase();
-}
-
-function functionForType3() {
-    let color = generateColor();
-    let res = [];
-    task.question = "Что это за цвет?\n" + color;
-    task.correctAnswer = color;
-    document.getElementsByName("question")[0].innerHTML = "<h1>" + task.question + "</h1>";
-    document.getElementsByName("answers")[0].innerHTML = "<ul><li name='color'></li><li name='color'></li><li name='color'></li><li name='color'></li></ul>";
-    document.getElementsByName("answers")[0].style.textAlign = "center";
-    let answers = [color, generateColor(), generateColor(), generateColor()];
-    task.answers = answers.slice(0);
-    let elements = document.getElementsByName("color");
-    for (let i = 0; i < 4; i++) {
-        let a = Math.floor(Math.random() * answers.length);
-        let b = answers.splice(a, 1);
-        elements[i].style.backgroundColor = b;
-        res.push(b);
-    }
-    task.answers = res;
-    document.getElementsByName("color")[0].onclick = function () {
-        task.userAnswer = rgbToHash(this.style.backgroundColor);
-        this.style.boxShadow = "0 0 0 3px #fff, 0 0 0 6px #ff8282";
-        document.getElementsByName("color")[1].style.boxShadow = "";
-        document.getElementsByName("color")[2].style.boxShadow = "";
-        document.getElementsByName("color")[3].style.boxShadow = "";
-    };
-    document.getElementsByName("color")[1].onclick = function () {
-        task.userAnswer = rgbToHash(this.style.backgroundColor);
-        this.style.boxShadow = "0 0 0 3px #fff, 0 0 0 6px #ff8282";
-        document.getElementsByName("color")[0].style.boxShadow = "";
-        document.getElementsByName("color")[2].style.boxShadow = "";
-        document.getElementsByName("color")[3].style.boxShadow = "";
-    };
-    document.getElementsByName("color")[2].onclick = function () {
-        task.userAnswer = rgbToHash(this.style.backgroundColor);
-        this.style.boxShadow = "0 0 0 3px #fff, 0 0 0 6px #ff8282";
-        document.getElementsByName("color")[1].style.boxShadow = "";
-        document.getElementsByName("color")[0].style.boxShadow = "";
-        document.getElementsByName("color")[3].style.boxShadow = "";
-    };
-    document.getElementsByName("color")[3].onclick = function () {
-        task.userAnswer = rgbToHash(this.style.backgroundColor);
-        this.style.boxShadow = "0 0 0 3px #fff, 0 0 0 6px #ff8282";
-        document.getElementsByName("color")[1].style.boxShadow = "";
-        document.getElementsByName("color")[2].style.boxShadow = "";
-        document.getElementsByName("color")[0].style.boxShadow = "";
-    }
-}
-
-function functionForType2(){
-    let windowForQuestion = document.getElementsByName("question")[0];
-    windowForQuestion.innerHTML += '<h2>' + task.question + '</h2>';
-    let windowForAnswers = document.getElementsByName("answers")[0];
-    windowForAnswers.innerHTML += "<ul id='allAnswers'>";
-    windowForAnswers.style.textAlign = "left";
-    task.answers.forEach(function (quest) {
-        windowForAnswers.innerHTML += "<li class='answerForSecond'>" + "<input type='checkbox'>" + "<span>" + quest + "</span>" + "</li>";
-    });
-    windowForAnswers.innerHTML += "</ul>";
 }
 
 function askQuestion() {
