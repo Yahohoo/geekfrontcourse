@@ -1,9 +1,11 @@
 let types = [],
  n = 0,
- final = [];
+ final = [],
+ task = {},
+ questions = [];
 
 document.getElementsByName("submit")[0].onclick = function () {
-    types, n = read();//считать данные о типах вопросов
+    read();//считать данные о типах вопросов
     document.getElementsByName("main")[0].style.display = 'none';//скрыть главную страницу
     document.getElementsByName("task")[0].style.display = 'block';
     questions = form(types, n);//сформировать список вопросов
@@ -66,7 +68,7 @@ function form(types, n) {
 
 function results(final) {
     console.log(final);
-    let windowForAllResults = document.getElementsByName("results")[0]
+    let windowForAllResults = document.getElementsByName("results")[0];
     windowForAllResults.innerHTML = '';
     final.forEach(function (task) {
         windowForAllResults.innerHTML += '<section>';
@@ -92,13 +94,11 @@ function read() {
         if (elem.checked) { types.push(i); }
     }
     n = parseInt(document.getElementsByName('amount')[0].value, 10);
-    return types, n
 }
 
 function randomTask() {
     let a = Math.floor(Math.random() * questions.length);
-    let b = questions.splice(a, 1)[0];
-    return b;
+    return questions.splice(a, 1)[0];
 }
 
 function askQuestion() {
