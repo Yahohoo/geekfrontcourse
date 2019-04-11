@@ -8,7 +8,7 @@ function removeSelectionLines(currentIndex, arrayOfOptions, numberOfQuestions) {
     }
 }
 
-function functionForType3() {
+function functionForType3(task) {
     let color = generateColor();
     let res = [];
     let numberOfQuestions = 4;

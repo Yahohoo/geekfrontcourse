@@ -5,13 +5,15 @@ let types = [],
  questions = []; //questions - массив с вопросами
 
 document.getElementsByName("submit")[0].onclick = function () {
-    read();//считать данные о типах вопросов
+    const arrayForNumberAndTypes = read();//считать данные о типах вопросов
+    types = arrayForNumberAndTypes[0];
+    n = arrayForNumberAndTypes[1];
     document.getElementsByName("main")[0].style.display = 'none';//скрыть главную страницу
     document.getElementsByName("task")[0].style.display = 'block';
     questions = form(types, n);//сформировать список вопросов
     if (n !== 0) {//повторять столько сколько вопросов
-        task = randomTask();//выбрать вопрос из списка
-        askQuestion();//в зависимости от типа вызвать соответствующую функцию которая оформит интерфейс и считает ответ
+        task = randomTask(questions);//выбрать вопрос из списка
+        askQuestion(task);//в зависимости от типа вызвать соответствующую функцию которая оформит интерфейс и считает ответ
         //final = correct(answer, task);//записать корректность/некорректность ответа
         n--;
     } else {
@@ -29,8 +31,8 @@ document.getElementsByName("check")[0].onclick = function () {
         let windowForAnswers = document.getElementsByName("answers")[0];
         windowForAnswers.innerHTML = '';
         console.log(final);
-        task = randomTask();//выбрать вопрос из списка
-        askQuestion();//в зависимости от типа вызвать соответствующую функцию которая оформит интерфейс и считает ответ
+        task = randomTask(questions);//выбрать вопрос из списка
+        askQuestion(task);//в зависимости от типа вызвать соответствующую функцию которая оформит интерфейс и считает ответ
         //final = correct(answer, task);//записать корректность/некорректность ответа
         n--;
     } else {
@@ -92,14 +94,15 @@ function read() {
         (elem.checked) && types.push(i);
     }
     n = parseInt(document.getElementsByName('amount')[0].value, 10);
+    return [types, n]
 }
 
-function randomTask() {
+function randomTask(questions) {
     let a = Math.floor(Math.random() * questions.length);
     return questions.splice(a, 1)[0];
 }
 
-function askQuestion() {
+function askQuestion(task) {
     let f;
     switch (task.type) {
 //        case 1:
@@ -124,5 +127,5 @@ function askQuestion() {
 //        case 7:
 //            var f = functionForType7;
     }
-    return f();
+    return f(task);
 }
