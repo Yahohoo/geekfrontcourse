@@ -1,8 +1,8 @@
 let types = [],
  n = 0,
- final = [],
- task = {},
- questions = [];
+ final = [], //final - список из вопросов и ответов пользователя
+ task = {}, //task - текущее задание
+ questions = []; //questions - массив с вопросами
 
 document.getElementsByName("submit")[0].onclick = function () {
     read();//считать данные о типах вопросов
@@ -22,7 +22,7 @@ document.getElementsByName("submit")[0].onclick = function () {
 
 document.getElementsByName("check")[0].onclick = function () {
     if (n !== 0) {
-        if (task.type === 2){userAnswerToSecondType()}
+        (task.type === 2) && userAnswerToSecondType();
         final.push(task);
         let windowForQuestion = document.getElementsByName("question")[0];
         windowForQuestion.innerHTML = '';
@@ -34,20 +34,16 @@ document.getElementsByName("check")[0].onclick = function () {
         //final = correct(answer, task);//записать корректность/некорректность ответа
         n--;
     } else {
-        if (task.type === 2){userAnswerToSecondType()}
+        (task.type === 2)&& userAnswerToSecondType();
         final.push(task);
         results(final);//сформировать страницу результатов
         console.log(final);
     }
 };
 
-//questions - массив с вопросами
-//task - текущее задание
-//answer - ответ данный пользователем
-//final - список из вопросов и ответов пользователя
 
-function isCorrect(ans, correct) {
-    return correct.indexOf(ans) !== -1;
+function isSubset(element, set) {
+    return set.indexOf(element) !== -1;
 }
 
 function form(types, n) {
@@ -67,20 +63,22 @@ function form(types, n) {
 }
 
 function results(final) {
-    console.log(final);
     let windowForAllResults = document.getElementsByName("results")[0];
     windowForAllResults.innerHTML = '';
     final.forEach(function (task) {
-        windowForAllResults.innerHTML += '<section>';
+        let html = "";
+        html += '<article class="col-10 offset-1 align-items-center"><section name="question" class="card align-items-center"><h1>' + task.question + '</h1></section>';
+        html += '<section name="answers" class="card" style="text-align:center;"><ul>';
         switch (task.type) {
             case 2:
-                printingForSecond(task, windowForAllResults);
+                html = printingForSecond(task, html);
                 break;
             case 3:
-                printingForThird(task, windowForAllResults);
+                html = printingForThird(task, html);
                 break;
         }
-        windowForAllResults.innerHTML += '</section>';
+        html += '</ul></section></article>';
+        windowForAllResults.innerHTML += html;
     });
     document.getElementsByName("task")[0].style.display = 'none';
     document.getElementsByName("results")[0].style.display = 'block';
@@ -91,7 +89,7 @@ function read() {
     n = 0;
     for (let i = 1; i <= 7; i++) {
         let elem = document.getElementsByName(String(i))[0];
-        if (elem.checked) { types.push(i); }
+        (elem.checked) && types.push(i);
     }
     n = parseInt(document.getElementsByName('amount')[0].value, 10);
 }
@@ -102,16 +100,17 @@ function randomTask() {
 }
 
 function askQuestion() {
+    let f;
     switch (task.type) {
 //        case 1:
 //            var f = functionForType1;
 //
         case 2:
-            var f = functionForType2;
+            f = functionForType2;
             break;
 
         case 3:
-            var f = functionForType3;
+            f = functionForType3;
 
 //        case 4:
 //            var f = functionForType4;
