@@ -32,7 +32,7 @@ function printingForSecond(task, html) {
     return html
 }
 
-function functionForType2() {
+function functionForType2(task) {
     let windowForQuestion = document.getElementsByName("question")[0];
     windowForQuestion.innerHTML += '<h2>' + task.question + '</h2>';
     let windowForAnswers = document.getElementsByName("answers")[0];
