@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="text" id="message">
+    <button id="submit" onclick="appendMessage()">Отправить</button>
+    <ul id="correspondence">
+        <li>Привет</li>
+        <li>Ну привет</li>
+    </ul>
+<script>
+    function appendMessage() {
+        let message = document.getElementById("message");
+        let chat = document.getElementById("correspondence");
+        chat.innerHTML += '<li>' + message.value + '</li>';
+    }
+</script>
+</body>
+</html>

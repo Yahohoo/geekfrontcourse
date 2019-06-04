@@ -1,0 +1,147 @@
+ body{
+    font-family: "Consolas";
+    color: #50026E;
+    margin: 0;
+    background: repeating-linear-gradient(45deg,#9d81ba, #9d81ba 5px, white 5px, white 20px) fixed 1500px;
+}
+
+ .myOwnOffset{
+     margin-left: 8.3333333%;
+ }
+
+ img.photo{
+    border: 3px solid #50026E;
+    border-radius: 500px;
+ }
+
+ li {
+    display: inline-block;
+    list-style-type: none; 
+}
+
+ section.projectsTDK, section.aboutTDK, header.HeaderTDK{
+    padding-top: 10%;
+    text-align: center;
+    vertical-align: middle;
+    background: white;
+    min-height: 100vh;
+}
+
+
+ nav.nav-contact{
+    padding-top: 0;
+    background: #50026E;
+    width: 100%;
+    text-align: center;
+    height: 80px;
+}
+
+ h1{
+    font-size: 40px;
+}
+
+ p.text{
+    font-size: large;
+}
+
+ p.textAboutMe{
+    float: left;
+    padding-left: 1%;
+    padding-right: 1%;
+    font-size: 20px;
+    border: 3px solid #50026E;
+    border-radius: 3px;
+}
+
+ nav.NavTDK{
+    height: 50px;
+    position: fixed;
+}
+
+ nav.nav-contact{
+    height: 80px;
+}
+
+
+ a.a-href{
+    margin-right: 30px;
+    color: white;
+    font-stretch: extra-expanded;
+    vertical-align: middle;
+    text-decoration: none;
+}
+
+ a.a-href:hover{
+    color: yellow;
+}
+
+ p.info{
+    color: white;
+    border-bottom: 2px inset white;
+    margin: 0;
+}
+ article.newProject{
+     padding: 0;
+     border: #50026E 3px;
+     border-radius: 3px;
+     text-align: center;
+     height: 20vh;
+ }
+
+
+ #aboutBorshevik:not(:target) {
+     display: none;
+ }
+ #aboutBorshevik:target {
+     display: block;
+ }
+
+ img.project_image{
+     height:200px;
+ }
+
+ a.PopUp{
+     text-decoration: underline;
+     color: #50026E;
+     font-stretch: extra-expanded;
+ }
+
+ a:hover{
+     color: yellow;
+ }
+
+ a.PopUp:hover{
+     color: green;
+ }
+
+ p.textAboutBorshevik{
+     width: 40%;
+     margin-left: 30%;
+ }
+
+
+ .navbar-inverse {
+     background-color: #50026E;
+     border-color: #080808;
+ }
+
+ .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+     background-color: #660099;
+ }
+
+ .navbar-inverse .navbar-brand {
+     color: white;
+ }
+
+ .navbar-inverse .navbar-nav>li>a {
+     color: white;
+ }
+
+ .navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover {
+     color: yellow;
+     background-color: transparent;
+ }
+
+ a.navbar-bran :hover{
+     color: yellow;
+ }

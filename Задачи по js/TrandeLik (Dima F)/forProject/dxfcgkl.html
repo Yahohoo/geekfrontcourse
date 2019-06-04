@@ -1,0 +1,17 @@
+<div>
+<ul>
+    <li>Этот</li>
+    <li>тест</li>
+</ul>
+<ul>
+    <li>полностью</li>
+    <li>пройден</li>
+</ul>
+</div>
+<script>
+    var elements = document.querySelectorAll('ul > li:last-child');
+
+    for (var i = 0; i < elements.length; i++) {
+        alert( elements[i].innerHTML ); // "тест", "пройден"
+    }
+</script>

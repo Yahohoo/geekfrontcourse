@@ -1,0 +1,47 @@
+header, main, footer {
+    padding:0 !important;
+    margin: 0 !important;
+}
+nav {
+    background-color: #16f0e1;
+    font-size:40px;
+    position:fixed;
+}
+li{
+    list-style-type: none;
+    text-align: center;
+}
+header{
+    background-color: #95e2f5;
+    font-size: 40px;
+}
+
+.card{
+    display:inline-block;
+    height:100%;
+    background-color: inherit;
+}
+p{
+    text-align: center;
+    width:100%;
+}
+.full{
+    min-height:100vh;
+}
+a{
+    color:black;
+}
+main {
+    background-color: #1dc6f0;
+    font-size:40px;
+}
+footer {
+    font-size:40px;
+    background-color: #0d89fc;
+}
+.content>img{
+    border-radius:50%;
+}
+.content>img, .content>article{
+    display: inline-block;
+}
