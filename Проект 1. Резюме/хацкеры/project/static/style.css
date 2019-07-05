@@ -1,0 +1,141 @@
+body{
+    background: linear-gradient(180deg, #801a0d, #e26b6b);
+}
+
+.header_block{
+    height: 300px;
+    width: 60%; 
+    background-color: #a6b2fd;
+    margin: auto;
+    position: relative;
+    z-index: 80;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.about_me_block{
+    height: 300px;
+    width: 70%;
+    background-color: #5a5c64;
+    position: absolute;
+    z-index: 90;
+    overflow: hidden;
+}
+
+
+.text_about_me{
+    color: #f8ffd3;
+    font-size: 150%;
+    font-family: 'Roboto';
+    text-align: center;
+}
+
+.some_text_block{
+    margin-top: 5%;
+}
+
+.ava_block{
+    height: 300px;
+    width:  30%;
+    position: absolute;
+    left: 70%;
+    z-index: 90;
+    background-color: #5a5c64;
+    overflow: hidden;
+}
+
+.ava{
+    border-radius: 200px;
+    width: 250px;
+    height: 250 px;
+    margin-top: 12%;
+    margin-left: 12%;
+    position: absolute;
+}
+
+.main_block{
+    height: 1400px;
+    width: 60%;
+    background-color: #f8ffd3;
+    margin: auto;
+    position: relative;
+    z-index: 80;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.portfolio_block{
+    height: 900px;
+    width: 100%;
+    position: absolute;
+    background: #fdefdf;
+}
+
+.headline_portfolio{
+    font-style: italic;
+    color: #5a5c64;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.contact_block{
+    height: 500px;
+    width: 100%;
+    position: absolute;
+    top:900px;
+    background: #fdefdf;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.some_inf_block{
+    height: 60%;
+    width: 25%;
+    border: 6px solid #5a5c64;
+    background: #fdefdf;
+    position: absolute;
+    left: 70%;
+    top: 25%;
+    overflow: hidden;
+}
+
+.some_inf_block:hover{
+    background-color: #e7be4c
+}
+
+.some_text{
+    color: #5a5c64;
+    font-size: 140%;
+    font-style: italic;
+    color: #5a5c64;
+    margin-left: 5%;
+    text-align: center;
+}
+
+.form_block{
+    height: 100px;
+    width: 30%;
+    position: absolute;
+    left:5%
+}
+
+.input{
+    border: none;
+    border-bottom: 1px solid #5a5c64;
+    font-size: 30px;
+	font-weight:100;
+    margin-bottom:25px;
+    text-align: center;
+    font-family: 'Roboto';
+    background-color: #fdefdf;
+    margin-left: 5%;
+    margin-top: 1%;
+}
+
+.button{
+    background-color: #fdefdf;
+    width: 50%;
+    height: 30px;
+    font-size: 20px;
+    font-family: 'Roboto';
+    margin-left: 30%;
+    color: #5a5c64;
+    border-radius: 5px;
+}
